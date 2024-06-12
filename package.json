@@ -1,0 +1,15 @@
+{
+    "name": "funny-json-explorer",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "A command line tool for visualizing JSON files.",
+    "main": "Main.js",
+    "dependencies": {
+      "commander": "^10.0.0"
+    },
+    "bin": {
+      "fje": "./Main.js"
+    },
+    "author": "Huang Zhengsong",
+    "license": "MIT"
+  }

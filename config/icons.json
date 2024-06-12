@@ -1,0 +1,10 @@
+{
+    "smiley": {
+        "leafIcon": "😊",
+        "nodeIcon": "😎"
+    },
+    "animal": {
+        "leafIcon": "🐱",
+        "nodeIcon": "🐶"
+    }
+}

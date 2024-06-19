@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram program="umlet" version="15.1.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass1</id>
+    <coordinates>
+      <x>100</x>
+      <y>50</y>
+      <w>160</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>
+      AbstractJsonFactory
+      --
+      + create(rootNode: object): Node
+      --
+    </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass2</id>
+    <coordinates>
+      <x>300</x>
+      <y>50</y>
+      <w>160</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>
+      TreeRenderStrategy
+      --
+      + render(node: Node): string[]
+      + leafRender(node: Node): string[]
+      + nodeRender(node: Node): string[]
+      --
+    </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass3</id>
+    <coordinates>
+      <x>300</x>
+      <y>250</y>
+      <w>160</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>
+      RectangleRenderStrategy
+      --
+      + render(node: Node): string[]
+      + leafRender(node: Node): string[]
+      + nodeRender(node: Node): string[]
+      --
+    </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass4</id>
+    <coordinates>
+      <x>100</x>
+      <y>200</y>
+      <w>160</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>
+      Node
+      --
+      - children: Node[]
+      - name: string
+      - level: number
+      - val: any
+      - isLast: boolean
+      - isLeaf: boolean
+      - isRoot: boolean
+      + addChild(child: Node): void
+      + render(icon: Icon): string[]
+      --
+    </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass5</id>
+    <coordinates>
+      <x>500</x>
+      <y>50</y>
+      <w>160</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>
+      JsonExplorer
+      --
+      + builder(iconName: string, styleName: string, rootNode: object): void
+      + explore(icon: Icon, strategy: RenderStrategy, rootNode: Node): void
+      + addStyle(styleName: string, newStrategy: RenderStrategy): void
+      --
+    </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass6</id>
+    <coordinates>
+      <x>500</x>
+      <y>200</y>
+      <w>160</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>
+      IconFamily
+      --
+      + loadFromFile(filePath: string): void
+      + getIcon(iconName: string): Icon
+      --
+    </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass7</id>
+    <coordinates>
+      <x>500</x>
+      <y>350</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>
+      Icon
+      --
+      + leafIcon: string
+      + nodeIcon: string
+      --
+    </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <relation>
+    <id>Relation1</id>
+    <type>Generalization</type>
+    <start_element>UMLClass2</start_element>
+    <end_element>UMLClass1</end_element>
+  </relation>
+  <relation>
+    <id>Relation2</id>
+    <type>Generalization</type>
+    <start_element>UMLClass3</start_element>
+    <end_element>UMLClass1</end_element>
+  </relation>
+  <relation>
+    <id>Relation3</id>
+    <type>Dependency</type>
+    <start_element>UMLClass4</start_element>
+    <end_element>UMLClass7</end_element>
+  </relation>
+  <relation>
+    <id>Relation4</id>
+    <type>Association</type>
+    <start_element>UMLClass4</start_element>
+    <end_element>UMLClass4</end_element>
+  </relation>
+  <relation>
+    <id>Relation5</id>
+    <type>Association</type>
+    <start_element>UMLClass5</start_element>
+    <end_element>UMLClass4</end_element>
+  </relation>
+  <relation>
+    <id>Relation6</id>
+    <type>Association</type>
+    <start_element>UMLClass5</start_element>
+    <end_element>UMLClass6</end_element>
+  </relation>
+  <relation>
+    <id>Relation7</id>
+    <type>Association</type>
+    <start_element>UMLClass6</start_element>
+    <end_element>UMLClass7</end_element>
+  </relation>
+  <relation>
+    <id>Relation8</id>
+    <type>Dependency</type>
+    <start_element>UMLClass5</start_element>
+    <end_element>UMLClass2</end_element>
+  </relation>
+  <relation>
+    <id>Relation9</id>
+    <type>Dependency</type>
+    <start_element>UMLClass5</start_element>
+    <end_element>UMLClass3</end_element>
+  </relation>
+</diagram>

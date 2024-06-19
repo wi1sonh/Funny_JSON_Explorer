@@ -1,11 +1,5 @@
 import fs from 'fs';
-
-class Icon {
-    constructor(nodeIcon, leafIcon) {
-        this.leafIcon = leafIcon;
-        this.nodeIcon = nodeIcon;
-    }
-}
+import { Icon } from './Icon.js';
 
 class IconFamily {
     constructor() {

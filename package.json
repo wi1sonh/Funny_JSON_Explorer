@@ -3,12 +3,12 @@
     "version": "1.0.0",
     "type": "module",
     "description": "A command line tool for visualizing JSON files.",
-    "main": "Main.js",
+    "main": "./src/main/Main.js",
     "dependencies": {
       "commander": "^10.0.0"
     },
     "bin": {
-      "fje": "./Main.js"
+      "fje": "./src/main/Main.js"
     },
     "author": "Huang Zhengsong",
     "license": "MIT"
